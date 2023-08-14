@@ -11,16 +11,22 @@ public class bai1 {
             System.out.print("a["+i+"] = ");
             a[i]=s.nextInt();
         }
-        int dem = 0;
+        int [] b = new int[n];
         for(int i=0;i<n;i++)
         {
-           for(int j=0;j<n;j++)
+            b[i]=1;
+           for(int j=i+1;j<n;j++)
            {
-            if(a[i]==a[j])
-            dem++;
+            if(a[i]==a[j]){
+            b[i]++; //so lan xuat hien
+            a[j]=-1;}
            }
-           System.out.println(a[i] + " xuat hien "+dem+" lan");
-           dem=0;
+        }
+        System.out.println("So lan xuat hien cua cac phan tu :");
+        for (int i = 0; i < n; i++) {
+            if (a[i] != -1) {
+                System.out.println(a[i] + " xuat hien " + b[i] + " lan");
+            }
         }
 
     }
